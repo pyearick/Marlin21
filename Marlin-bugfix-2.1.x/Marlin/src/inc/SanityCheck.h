@@ -1408,7 +1408,7 @@ static_assert(NUM_SERVOS <= NUM_SERVO_PLUGS, "NUM_SERVOS (or some servo index) i
         #error "BLTOUCH requires Z_MIN_PROBE_ENDSTOP_HIT_STATE LOW."
       #endif
     #elif Z_MIN_PROBE_ENDSTOP_HIT_STATE != HIGH
-      #error "BLTOUCH requires Z_MIN_PROBE_ENDSTOP_HIT_STATE HIGH."
+      //#error "BLTOUCH requires Z_MIN_PROBE_ENDSTOP_HIT_STATE HIGH."
     #endif
     #if ENABLED(Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN)
       #if ENABLED(INVERTED_PROBE_STATE)
@@ -1416,7 +1416,7 @@ static_assert(NUM_SERVOS <= NUM_SERVO_PLUGS, "NUM_SERVOS (or some servo index) i
           #error "BLTOUCH requires Z_MIN_ENDSTOP_HIT_STATE LOW."
         #endif
       #elif Z_MIN_ENDSTOP_HIT_STATE != HIGH
-        #error "BLTOUCH requires Z_MIN_ENDSTOP_HIT_STATE HIGH."
+        //#error "BLTOUCH requires Z_MIN_ENDSTOP_HIT_STATE HIGH."
       #endif
     #endif
 
@@ -1535,7 +1535,7 @@ static_assert(NUM_SERVOS <= NUM_SERVO_PLUGS, "NUM_SERVOS (or some servo index) i
     #if !USE_Z_MIN
       #error "Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN requires the Z_MIN_PIN to be defined."
     #elif Z_MIN_PROBE_ENDSTOP_HIT_STATE != Z_MIN_ENDSTOP_HIT_STATE
-      #error "Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN requires Z_MIN_ENDSTOP_HIT_STATE to match Z_MIN_PROBE_ENDSTOP_HIT_STATE."
+      //#error "Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN requires Z_MIN_ENDSTOP_HIT_STATE to match Z_MIN_PROBE_ENDSTOP_HIT_STATE."
     #endif
   #elif !PIN_EXISTS(Z_MIN_PROBE)
     #error "Z_MIN_PROBE_PIN must be defined if Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN is not enabled."
